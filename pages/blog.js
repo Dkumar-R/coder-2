@@ -1,19 +1,13 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
+import * as fs from 'fs';
+
 
 const Blog = (props) => {
   // console.log(props)
-  const [Blogs, setBlogs] = useState(props.AllBlogs);
+  const [Blogs, setBlogs] = useState(props.allBlog);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/api/blogAPI').then((data) => {
-  //     return data.json();
-  //   })
-  //     .then((textObject) => {
-        // setBlogs(textObject)
-  //     })
-  // }, [])
 
   return (
     <div>
@@ -31,25 +25,32 @@ const Blog = (props) => {
                 <div className='ring-1 rounded-lg ring-slate-300 hover:ring-indigo-500 group cursor-pointer p-5 mx-5 mt-5 h-40 max-w-7xl'>
                   <div className='flex justify-between items-center'>
                   <h3 className='text-left font-semibold text-xl group-hover:text-indigo-500'>{BlogItem.title}</h3>
-                  <span className='text-slate-600 text-sm '>Date: {BlogItem.date}</span>
+                  <span className='text-red-500 font-medium text-sm '>Date: {BlogItem.date}</span>
                   </div>
-                  <p className='font-medium text-left pt-6 group-hover:text-indigo-500 text-slate-500'>{BlogItem.content.substr(0,190)}...</p>
+                  <p className='font-medium text-left pt-6 group-hover:text-indigo-500 text-slate-500'>{BlogItem.content.substr(0,180)}...</p>
                 </div></Link>
              </div>
             })}
           </div>
         </div>
       </div>
-
     </div>
   )
 }
 
-export async function getServerSideProps(context) {
-  let data = await fetch('http://localhost:3000/api/blogAPI')
-  let AllBlogs = await data.json()
+export async function getStaticProps(context) {
+  let data = await fs.promises.readdir("BlogData")
+  let myFile;
+  let allBlog = [];
+  for (let index = 0; index < data.length; index++) {
+      const item = data[index];
+      myFile = await fs.promises.readFile(('BlogData/' + item), 'utf-8')
+      allBlog.push(JSON.parse(myFile))
+      // Print Console
+      // console.log(myFile)
+  }
   return {
-    props: {AllBlogs}, // will be passed to the page component as props
+    props: {allBlog}, // will be passed to the page component as props
   }
 }
 
