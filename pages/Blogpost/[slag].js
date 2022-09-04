@@ -4,6 +4,9 @@ import * as fs from 'fs';
 
 
 const Slag = (props) => {
+  function createMarkup(c) {
+    return {__html: c};
+  }
     const [Blogs, setBlog] = useState(props.MyBlog)
   return (
     <div className='mt-20'>
@@ -15,7 +18,7 @@ const Slag = (props) => {
                 <span className='text-base font-medium text-slate-600'>Date: {Blogs && Blogs.date}</span>
               </div>
               <hr className='border-indigo-500 mt-5'/>
-              <p className='pt-20 px-5 pb-5 text-slate-600 text-xl text-center'>{Blogs && Blogs.content}</p>
+              {Blogs && <p className='pt-20 px-5 pb-5 text-slate-600 text-xl text-center' dangerouslySetInnerHTML={createMarkup(Blogs.content)} ></p>}
             </div>
     </div>
   )

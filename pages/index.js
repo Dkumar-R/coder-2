@@ -28,10 +28,10 @@ export default function Home() {
               <h3 className='text-left font-semibold text-xl group-hover:text-indigo-500'>Learn →</h3>
               <p className='font-medium text-left pt-6 group-hover:text-indigo-500'>Explore Coding and learn anythig .</p>
             </div>
-            <div className='ring-1 rounded-lg ring-slate-300 hover:ring-indigo-500 group cursor-pointer p-5 mx-5 mt-5 h-40 w-56'>
+            <Link href="/docs"><a><div className='ring-1 rounded-lg ring-slate-300 hover:ring-indigo-500 group cursor-pointer p-5 mx-5 mt-5 h-40 w-56'>
               <h3 className='text-left font-semibold text-xl group-hover:text-indigo-500'>Docs →</h3>
               <p className='font-medium text-left pt-6 group-hover:text-indigo-500'>Explore Coding blogs and many more.</p>
-            </div>
+            </div></a></Link>
             <div className='ring-1 rounded-lg ring-slate-300 group  hover:ring-indigo-500 cursor-pointer p-5 mx-5 mt-5 h-40 w-56'>
               <h3 className='text-left font-semibold text-xl group-hover:text-indigo-500'>More →</h3>
               <p className='font-medium text-left pt-6 group-hover:text-indigo-500'>Explore Coding blogs and many more.</p>
