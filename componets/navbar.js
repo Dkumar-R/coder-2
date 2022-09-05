@@ -9,7 +9,7 @@ export default function navbar() {
             <ul className='flex space-x-10 font-semibold justify-center'>
               <li className='cursor-pointer text-stone-50 hover:text-white hover:underline'><Link href="/"><a>Home</a></Link></li>
               <li className='cursor-pointer text-stone-50 hover:text-white hover:underline'><Link href="blog"><a>Blog</a></Link></li>
-              <li className='cursor-pointer text-stone-50 hover:text-white hover:underline'>Contct</li>
+              <Link href= "/contect"><a><li className='cursor-pointer text-stone-50 hover:text-white hover:underline'>Contect</li></a></Link>
               <li><Link href="/about"><a className='cursor-pointer text-stone-50 hover:text-white hover:underline'>About</a></Link></li>
             </ul>
             </div>
