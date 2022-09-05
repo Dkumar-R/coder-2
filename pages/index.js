@@ -12,7 +12,7 @@ export default function Home() {
       <main className="">
         <div className='mx-auto max-w-7xl text-center'>
         <h1 className="font-bold text-5xl mt-20">
-         <span className='group cursor-pointer'>Welcome to <a className='group-hover:text-blue-500 group-hover:underline' >Coder.com</a></span>
+         <span className='group cursor-pointer'>Welcome to <a className='group-hover:text-blue-500 group-hover:underline'>&lt;Coder.com /&gt;</a></span>
         </h1>
         <p className=" font-medium text-lg mt-10">
           Get started by editing

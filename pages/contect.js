@@ -52,12 +52,12 @@ const Contect = () => {
     <div className=''>
       <div className='max-w-7xl mx-auto'>
         <div className='m-36'>
-            <form onSubmit={HandleSumit} className='flex flex-col ring-1 p-10 rounded-lg ring-slate-300 shadow-xl '>
+            <form onSubmit={HandleSumit} className='flex flex-col ring-1 p-10 rounded-lg ring-slate-400 shadow-xl shadow-purple-300 '>
               <h4 className='text-3xl font-semibold text-center mb-10 text-indigo-500 underline'>Contect</h4>
-              <input type="text" value={name}  id="name" name='name' onChange={handleChange} placeholder='Name:' className='border-2 border-slate-200 focus:outline-none focus:border-indigo-500 p-1 rounded-md font-medium text-base bg-slate-200 focus:bg-white placeholder:text-black my-3'/>
-                <input type="email" value={email} name='email' id="email"  onChange={handleChange} placeholder='Email:' className='border-2 border-slate-200 focus:outline-none focus:border-indigo-500 p-1 rounded-md font-medium text-base bg-slate-200 focus:bg-white placeholder:text-black my-3'/>
-                <input type="password" value={password} name="password" id="password" placeholder='Password:' onChange={handleChange} className='border-2 border-slate-200 focus:outline-none focus:border-indigo-500 p-1 rounded-md font-medium text-base bg-slate-200 focus:bg-white placeholder:text-black my-3'/>
-                <input type="phone" value={phone} onChange={handleChange} name='phone' id="phone" placeholder='Phone No.' className='border-2 border-slate-200 focus:outline-none focus:border-indigo-500 p-1 rounded-md font-medium text-base bg-slate-200 focus:bg-white placeholder:text-black my-3' />
+              <input required type="text" value={name}  id="name" name='name' onChange={handleChange} placeholder='Name:' className='border-2 border-slate-200 focus:outline-none focus:border-indigo-500 p-1 rounded-md font-medium text-base bg-slate-200 focus:bg-white placeholder:text-black my-3'/>
+                <input required type="email" value={email} name='email' id="email"  onChange={handleChange} placeholder='Email:' className='border-2 border-slate-200 focus:outline-none focus:border-indigo-500 p-1 rounded-md font-medium text-base bg-slate-200 focus:bg-white placeholder:text-black my-3'/>
+                <input required type="password" value={password} name="password" id="password" placeholder='Password:' onChange={handleChange} className='border-2 border-slate-200 focus:outline-none focus:border-indigo-500 p-1 rounded-md font-medium text-base bg-slate-200 focus:bg-white placeholder:text-black my-3'/>
+                <input required type="phone" value={phone} onChange={handleChange} name='phone' id="phone" placeholder='Phone No.' className='border-2 border-slate-200 focus:outline-none focus:border-indigo-500 p-1 rounded-md font-medium text-base bg-slate-200 focus:bg-white placeholder:text-black my-3' />
                 <button type="submit" className='mt-20 mx-auto font-medium rounded-md px-10 py-3 bg-indigo-500 text-white shadow-lg shadow-indigo-400'>Submit</button>
             </form>
         </div>
